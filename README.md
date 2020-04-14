@@ -32,6 +32,20 @@ and `rotate_ephIDs` which creates the set of `ephIDs` for the new day. These
 methods are straight forward implementations of the description in the
 whitepaper.
 
+LowCostDP3T.py, when run standalone, will generate test vectors to help
+other implementors check their work:
+
+```
+$ python3 ./LowCostDP3T.py 
+sk0 0000000000000000000000000000000000000000000000000000000000000000
+ephID[0] 8fd521e6c47060efcbfdb9b801c30743
+ephID[1] d86e56bb702117b8cf20dc4aadd42310
+ephID[95] f38403173134f2c65682ee799e817ef3
+sk1 66687aadf862bd776c8fc18b8e9f8e20089714856ee233b3902a591d0d5f2925
+ephID[0] fda0fff97c5566886c5afcb0c7333f73
+ephID[1] 1d1ae795488b0ad0e4aba33d4bed3f4a
+ephID[95] b832b76cb203226cd7297f8483c60b76
+```
 
 ## Contact tracing: `ContactManager`
 

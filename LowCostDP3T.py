@@ -277,3 +277,23 @@ class MockApp:
 
 	def next_epoch(self):
 		self.ctmgr.process_epoch()
+                
+# Generate test vectors
+if __name__ == "__main__":
+        def hex(y):
+                return ''.join( [ "%02x" % x for x in y ] )
+
+        ks = KeyStore()
+        ks.SKt.insert(0, b"\0" * 32)
+        print("sk0", hex(ks.SKt[0]))
+        e = ks.create_ephIDs(ks.SKt[0])
+        print("ephID[0]", hex(e[0]))
+        print("ephID[1]", hex(e[1]))
+        print("ephID[95]", hex(e[95]))
+        
+        ks.rotate_SK()
+        print("sk1", hex(ks.SKt[0]))
+        e = ks.create_ephIDs(ks.SKt[0])
+        print("ephID[0]", hex(e[0]))
+        print("ephID[1]", hex(e[1]))
+        print("ephID[95]", hex(e[95]))
